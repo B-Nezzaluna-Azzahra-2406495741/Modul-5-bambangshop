@@ -95,4 +95,13 @@ This is the place for you to write reflections:
 
 #### Reflection Publisher-2
 
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?  
+   Menurut saya, pemisahan antara "Service" dan "Repository" dari "Model" penting untuk implementasi prinsip Single Responsibility agar setiap bagian kode memiliki tugas yang spesifik dan tidak tercampur. Model seharusnya hanya fokus pada representasi data atau struktur informasi, sementara Repository bertugas untuk menangani penyimpanan dan pengambilan data, serta Service bertugas mengelola logika bisnis yang lebih kompleks. Dengan pemisahan ini, kode menjadi jauh lebih mudah dimaintain, ditest, dan dikembangkan secara terpisah tanpa membebani satu struktur dengan terlalu banyak tanggung jawab.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?  
+   Apabila hanya menggunakan Model untuk menampung semua logika, maka akan terjadi penumpukan kode yang sangat rumit atau sering disebut sebagai "Fat Model". Interaksi antar model seperti Produk, Subscriber, dan Notifikasi akan menjadi tightly coupled karena satu model harus mengetahui detail teknis model lainnya secara langsung, misalnya model Produk harus memahami cara teknis mengirimkan notifikasi HTTP kepada Subscriber. Hal tersebut akan meningkatkan kompleksitas karena setiap perubahan kecil pada cara pengiriman notifikasi akan memaksa untuk mengubah struktur data inti, sehingga kode menjadi sulit dimaintain.
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.  
+   Penggunaan Postman membantu dalam menguji fungsionalitas API pada project ini, yaitu untuk mensimulasikan pengiriman data JSON dari Publisher ke Receiver tanpa harus membuat frontend terlebih dahulu. Fitur Collections membantu saya merapikan berbagai permintaan API, sementara Environment Variables memudahkan perpindahan antar port server, misalnya port 8000 dan 8001, secara instan. Untuk Group Project ke depannya, fitur dokumentasi API otomatis dan Mock Server akan berguna untuk membantu tim frontend dan backend bekerja secara paralel dengan lebih sinkron dan efisien.
+
 #### Reflection Publisher-3
